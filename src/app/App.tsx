@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import LinearProgress from '@mui/material/LinearProgress';
-import {Menu} from '@mui/icons-material';
+import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 import {ErrorSnackbar} from '../components/ErrorSnackbar/ErrorSnackbar'
 import {Login} from "../features/Login/Login";
 import {Routes, Route} from "react-router-dom";
@@ -33,8 +33,6 @@ function App({demo = false}: PropsType) {
     dispatch(initializeAppTC())
   }, [dispatch])
 
-  //проверка на инициализацию, чтобы не прыгало приложение на /login и обратно,
-  //a сразу проверяет dispatch(initializeAppTC())
   if (!isInitialized) {
     return <div
       style={{position: 'fixed', top: '30%', textAlign: 'center', width: '100%'}}>
@@ -51,15 +49,15 @@ function App({demo = false}: PropsType) {
       <ErrorSnackbar/>
       <AppBar position="static">
         <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="menu">
-            <Menu/>
+          <IconButton edge="start" color="inherit" aria-label="todolist">
+            <PlaylistAddCheckIcon/>
           </IconButton>
           <Typography variant="h6">
-            News
+            Your Todo lists
           </Typography>
           {isLoggedIn && <Button onClick={onLogOut} color={"inherit"}>Log out</Button>}
         </Toolbar>
-        {status === 'loading' && <LinearProgress/>}
+        {status === 'loading' && <LinearProgress color={'success'}/>}
       </AppBar>
       <Container fixed>
         <Routes>

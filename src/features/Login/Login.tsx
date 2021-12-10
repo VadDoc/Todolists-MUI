@@ -49,18 +49,14 @@ export const Login = () => {
     },
     onSubmit: values => {
       dispatch(loginTC(values))
-      formik.resetForm() //очистка формы
+      formik.resetForm()
     },
   })
 
   const isLoggedIn = useSelector((state: AppRootStateType) => state.auth.isLoggedIn)
-  //useNavigate вместо Redirect пишется внизу перед return
   const navigate = useNavigate()
-  if(isLoggedIn) navigate('/')
 
-  //если нужно изменить данные в инпут, не из инпут, a например из редакса, будут проблемы,
-  // так как initialValues сработает только при первой перезарисовке. Используем:
-  // formik.setFieldValue('email', 'any value')
+  if(isLoggedIn) navigate('/')
 
   return <Grid container justifyContent={'center'}>
     <Grid item justifyContent={'center'}>
@@ -80,25 +76,17 @@ export const Login = () => {
             <TextField
               label="Email"
               margin="normal"
-              {...formik.getFieldProps('email')} //деструктуризация что есть в formik
-              // onBlur={formik.handleBlur}
-              // name={"email"}
-              // onChange={formik.handleChange}
-              // value={formik.values.email}
-              error={!!formik.errors.email && formik.touched.email} // пишем ниже деструктуризации
+              {...formik.getFieldProps('email')}
+              error={!!formik.errors.email && formik.touched.email}
               helperText={formik.touched.email ? formik.errors.email : ''}
             />
-            {/*{formik.touched.email && formik.errors.email ? <div style={{color: 'red'}}>{formik.errors.email}</div> : null}*/}
             <TextField
-              type="password"
               label="Password"
               margin="normal"
-              name={"password"}
-              onChange={formik.handleChange}
-              value={formik.values.password}
-              onBlur={formik.handleBlur}
+              {...formik.getFieldProps('password')}
+              error={!!formik.errors.password && formik.touched.password}
+              helperText={formik.touched.password ? formik.errors.password : ''}
             />
-            {formik.touched.password && formik.errors.password ? <div style={{color: 'red'}}>{formik.errors.password}</div> : null}
             <FormControlLabel
               label={'Remember me'}
               control={

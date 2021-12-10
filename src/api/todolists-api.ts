@@ -44,21 +44,17 @@ export const authAPI = {
     return instance.post<LoginParamsType,
       AxiosResponse<ResponseType<{ userId: number }>>>(`auth/login`, data)
   },
-
   me() {
     return instance.get<AuthResponseType,
       AxiosResponse<ResponseType<AuthMeType>>>(`auth/me`)
   },
-
   logout() {
     return instance.delete<AuthResponseType,
       AxiosResponse<ResponseType<{ userId: number }>>>('/auth/login')
   }
 }
 
-
 // types
-
 type AuthMeType = {
   resultCode: number
   messages: string[]
@@ -69,13 +65,13 @@ type AuthMeType = {
   }
 }
 
-
 export type TodolistType = {
   id: string
   title: string
   addedDate: string
   order: number
 }
+
 export type ResponseType<D = {}> = {
   resultCode: number
   messages: Array<string>
@@ -110,6 +106,7 @@ export type TaskType = {
   order: number
   addedDate: string
 }
+
 export type UpdateTaskModelType = {
   title: string
   description: string
@@ -118,6 +115,7 @@ export type UpdateTaskModelType = {
   startDate: string
   deadline: string
 }
+
 type GetTasksResponse = {
   error: string | null
   totalCount: number
