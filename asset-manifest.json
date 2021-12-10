@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Todolists-MUI/static/css/main.8f4615c3.chunk.css",
-    "main.js": "/Todolists-MUI/static/js/main.61e983dc.chunk.js",
-    "main.js.map": "/Todolists-MUI/static/js/main.61e983dc.chunk.js.map",
+    "main.js": "/Todolists-MUI/static/js/main.dd879f8e.chunk.js",
+    "main.js.map": "/Todolists-MUI/static/js/main.dd879f8e.chunk.js.map",
     "runtime-main.js": "/Todolists-MUI/static/js/runtime-main.fd4ce5a5.js",
     "runtime-main.js.map": "/Todolists-MUI/static/js/runtime-main.fd4ce5a5.js.map",
     "static/js/2.9849ad8d.chunk.js": "/Todolists-MUI/static/js/2.9849ad8d.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.fd4ce5a5.js",
     "static/js/2.9849ad8d.chunk.js",
     "static/css/main.8f4615c3.chunk.css",
-    "static/js/main.61e983dc.chunk.js"
+    "static/js/main.dd879f8e.chunk.js"
   ]
 }
