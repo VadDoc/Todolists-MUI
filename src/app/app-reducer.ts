@@ -5,7 +5,6 @@ import {handleServerAppError, handleServerNetworkError} from "../utils/error-uti
 import axios from "axios";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
-
 const initialState: InitialStateType = {
   status: 'idle',
   error: null,
@@ -49,7 +48,6 @@ export const initializeAppTC = () => async (dispatch: Dispatch) => {
   }
 }
 
-
 export type RequestStatusType = 'idle' | 'loading' | 'succeeded' | 'failed'
 export type InitialStateType = {
   status: RequestStatusType
@@ -57,15 +55,5 @@ export type InitialStateType = {
   isInitialized: boolean
 }
 
-// export const setAppErrorAC = (error: string | null) => ({type: 'APP/SET-ERROR', error} as const)
-// export const setAppStatusAC = (status: RequestStatusType) => ({type: 'APP/SET-STATUS', status} as const)
-// export const setIsInitializedAC = (value: boolean) => ({type: 'APP/SET-IS-INITIALIZED', value} as const)
-//
 export type SetAppErrorActionType = ReturnType<typeof setAppErrorAC>
 export type SetAppStatusActionType = ReturnType<typeof setAppStatusAC>
-export type SetIsInitializedActionType = ReturnType<typeof setIsInitializedAC>
-//
-// type ActionsType =
-//   | SetAppErrorActionType
-//   | SetAppStatusActionType
-//   | SetIsInitializedActionType

@@ -13,18 +13,14 @@ const slice = createSlice({
   name: 'auth',
   initialState: initialState,
   reducers: {
-    //имя action creator
-    setIsLoggedInAC (state, action: PayloadAction<{value: boolean}>) {
-      //прописываем без созданий копий, т.к. уже приходит копия state см. библиотеку immerjs
-      //все свойства находятся в объекте payload
+    setIsLoggedInAC(state, action: PayloadAction<{ value: boolean }>) {
       state.isLoggedIn = action.payload.value
     }
   }
 })
 
-//bp slice забираем reducer и action creators
 export const authReducer = slice.reducer
-export const {setIsLoggedInAC} = slice.actions //деструктуирующее присваивание
+export const {setIsLoggedInAC} = slice.actions
 
 // thunks
 export const loginTC = (data: any) => (dispatch: Dispatch) => {
@@ -32,7 +28,6 @@ export const loginTC = (data: any) => (dispatch: Dispatch) => {
   authAPI.login(data)
     .then(res => {
       if (res.data.resultCode === 0) {
-        //нужно передавать объект {value: true}
         dispatch(setIsLoggedInAC({value: true}))
         dispatch(setAppStatusAC({status: 'succeeded'}))
       } else {
@@ -50,7 +45,6 @@ export const logoutTC = () => async (dispatch: Dispatch) => {
   try {
     const response = await authAPI.logout()
     if (response.data.resultCode === 0) {
-      //нужно передавать объект {value: false}
       dispatch(setIsLoggedInAC({value: false}))
       dispatch(setAppStatusAC({status: 'succeeded'}))
     } else {
