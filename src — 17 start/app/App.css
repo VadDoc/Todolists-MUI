@@ -1,0 +1,116 @@
+body {
+    background-color: #f4fcf4 !important;
+}
+
+.active {
+    color: orange
+}
+
+.MuiToolbar-root {
+    background-color: darkgreen;
+    justify-content: space-around;
+}
+
+.todolist-title,
+.task {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-item {
+    position: relative;
+}
+
+.add-item button {
+    position: absolute;
+    top: 7px;
+    right: -45px;
+}
+
+.MuiPaper-root .add-item button {
+    right: 0;
+}
+
+.add-item label {
+    color: darkgreen!important;
+}
+
+.add-item fieldset {
+    border: darkgreen!important;
+}
+
+.task span {
+    color: darkgreen;
+}
+
+.todolist-title .title,
+.task .title {
+    padding-top: 10px;
+    color: #013101;
+}
+
+.todolist-title .MuiIconButton-root,
+.task .MuiIconButton-root {
+    color: darkred;
+}
+
+.todolist-title .MuiIconButton-root:hover,
+.task .MuiIconButton-root:hover {
+    color: #f54b4b;
+}
+
+.MuiPaper-root {
+    background-color: #eafaea !important;
+    border-radius: 10px !important;
+    border: 1px solid darkgreen;
+    transition: .6s ease !important;
+}
+
+.MuiPaper-root:hover {
+    background-color: #d4fad4 !important;
+    transform: scale(1.02);
+}
+
+.MuiFormControl-root input,
+.MuiPaper-root input {
+    background-color: white;
+    border-radius: 10px !important;
+    border: 1px solid darkgreen;
+}
+
+.editableInput {
+    position: relative!important;
+}
+
+.task .editableInput input {
+    position: absolute;
+    height: 1px;
+    width: 130px;
+    left: -80px;
+    top: 2px;
+    text-align: center;
+}
+
+.todolist-title .editableInput input {
+    position: absolute;
+    height: 1px;
+    width: 165px;
+    left: 0;
+    top: 2px;
+}
+
+.todolist-title fieldset,
+.task fieldset {
+    border-width: 0!important;
+}
+
+.buttonFilterText:hover,
+.buttonFilter {
+    color: white!important;
+    background-color: darkred!important;
+    margin: 0 2px!important;
+}
+
+.buttonFilterText {
+    background-color: darkgreen!important;
+}

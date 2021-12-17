@@ -15,7 +15,7 @@ const slice = createSlice({
   reducers: {
     //имя action creator
     setIsLoggedInAC (state, action: PayloadAction<{value: boolean}>) {
-      //прописываем без созданий копий, т.к. уже приходит копия state см. библиотеку immerjs
+      //прописываем без созданий копий, т.к. уже приходит копия state
       //все свойства находятся в объекте payload
       state.isLoggedIn = action.payload.value
     }
